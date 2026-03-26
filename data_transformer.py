@@ -14,7 +14,7 @@ class DataTransformer:
     def __init__(self):
         pass
 
-    def __create_dataframes(self):
+    def __create_dataframes(self) -> bool:
         try:
             if not os.path.exists(USERS_FILEPATH):
                 return False
@@ -34,16 +34,20 @@ class DataTransformer:
             print(f"Error creating dataframes: {e}")
             return False
 
-    def __clean_products_df(self):
+    def __clean_products_df(self) -> None:
         self.products_df = self.products_df.dropna()
 
-    def __log(self, data_to_log):
-        log_dict = data_to_log.to_dict(orient="records")
+    def __log(self, data_to_log: pd.DataFrame) -> None:
+        try:
+            log_dict = data_to_log.to_dict(orient="records")
 
-        with open(INVALID_TIMESTAMP_LOG_FILEPATH, "w") as f:
-            json.dump(log_dict, f, indent=4)
+            with open(INVALID_TIMESTAMP_LOG_FILEPATH, "w") as f:
+                json.dump(log_dict, f, indent=4)
 
-    def __clean_transactions_df(self):
+        except Exception as e:
+            print(f"Error logging transactions with invalid timestamps: {e}")
+
+    def __clean_transactions_df(self) -> bool:
         try:
             timestamp_validity = pd.to_datetime(
                 self.transactions_df["timestamp"], errors="coerce"
@@ -73,7 +77,7 @@ class DataTransformer:
             print(f"Error while cleaning transactions_df: {e}")
             return False
 
-    def __normalise_transactions_df(self):
+    def __normalise_transactions_df(self) -> bool:
         try:
             normalised_transactions_df = self.transactions_df.explode("items")
             normalised_items = pd.json_normalize(normalised_transactions_df["items"])
@@ -90,7 +94,7 @@ class DataTransformer:
             print(f"Error while normalising transactions_df: {e}")
             return False
 
-    def __merge_result_df(self):
+    def __merge_result_df(self) -> bool:
         try:
             merged_transactions_users_df = self.transactions_df.merge(
                 self.users_df, on="user_id"
@@ -124,9 +128,11 @@ class DataTransformer:
             print(f"Error while merging results: {e}")
             return False
 
-    def generate_clean_data_csv(self):
+    def generate_clean_data_csv(self) -> bool:
         if not self.__create_dataframes():
             return False
+        
+        self.__clean_products_df()
 
         if not self.__clean_transactions_df():
             return False

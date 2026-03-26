@@ -6,7 +6,7 @@ class ReportGenerator:
     def __init__(self):
         self.results = []
 
-    def __generate_revenue_by_category(self):
+    def __generate_revenue_by_category(self) -> bool:
         try:
             df_filtered_category = self.cleaned_df[
                 self.cleaned_df["status"] == "COMPLETED"
@@ -25,7 +25,7 @@ class ReportGenerator:
             print(f"Error while generating revenue by category: {e}")
             return False
 
-    def __generate_top_spenders(self):
+    def __generate_top_spenders(self) -> bool:
         try:
             user_result = (
                 self.cleaned_df.groupby("user_id")["total_item_value"]
@@ -49,7 +49,7 @@ class ReportGenerator:
             print(f"Error while generating top spenders: {e}")
             return False
 
-    def __generate_return_rate(self):
+    def __generate_return_rate(self) -> bool:
         try:
             total_items_per_country = (
                 self.cleaned_df.groupby("country")["quantity"].sum().reset_index()
@@ -85,7 +85,7 @@ class ReportGenerator:
             print(f"Error while generating return rate: {e}")
             return False
 
-    def generate_report(self):
+    def generate_report(self) -> bool:
         self.cleaned_df = pd.read_csv(CLEANED_DATASET_FILEPATH)
 
         if not self.__generate_revenue_by_category():
