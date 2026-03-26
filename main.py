@@ -1,6 +1,6 @@
-from data_generator import DataGenerator
-from data_transformer import DataTransformer
-from report_generator import ReportGenerator
+from src.data_generator import DataGenerator
+from src.data_transformer import DataTransformer
+from src.report_generator import ReportGenerator
 
 def main():
     dataGenerator = DataGenerator()
@@ -16,7 +16,7 @@ def main():
     if not reportGenerator.generate_report():
         return
     
-    print("Task finished succesfully!")
+    print("Task finished successfully!")
     
 if __name__=="__main__":
     main()

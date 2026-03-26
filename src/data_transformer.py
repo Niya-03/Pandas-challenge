@@ -49,6 +49,7 @@ class DataTransformer:
 
     def __clean_transactions_df(self) -> bool:
         try:
+
             timestamp_validity = pd.to_datetime(
                 self.transactions_df["timestamp"], errors="coerce"
             )
@@ -96,6 +97,11 @@ class DataTransformer:
 
     def __merge_result_df(self) -> bool:
         try:
+            self.products_df["product_id"] = self.products_df["product_id"].astype(int)
+            self.transactions_df["product_id"] = self.transactions_df[
+                "product_id"
+            ].astype(int)
+
             merged_transactions_users_df = self.transactions_df.merge(
                 self.users_df, on="user_id"
             )
@@ -131,7 +137,7 @@ class DataTransformer:
     def generate_clean_data_csv(self) -> bool:
         if not self.__create_dataframes():
             return False
-        
+
         self.__clean_products_df()
 
         if not self.__clean_transactions_df():
