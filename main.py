@@ -2,15 +2,22 @@ from data_generator import DataGenerator
 from data_transformer import DataTransformer
 from report_generator import ReportGenerator
 
-dataGenerator = DataGenerator()
+def main():
+    dataGenerator = DataGenerator()
+    dataTransformer = DataTransformer()
+    reportGenerator = ReportGenerator()
 
-dataGenerator.generate_products()
-dataGenerator.generate_users()
-dataGenerator.generate_transactions()
+    if not dataGenerator.generate_mock_data():
+        return
+   
+    if not dataTransformer.generate_clean_data_csv():
+        return
 
-dataTransformer = DataTransformer()
-dataTransformer.generate_clean_data_csv()
-
-reportGenerator = ReportGenerator()
-reportGenerator.generate_report()
+    if not reportGenerator.generate_report():
+        return
+    
+    print("Task finished succesfully!")
+    
+if __name__=="__main__":
+    main()
 

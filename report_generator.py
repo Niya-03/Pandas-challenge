@@ -1,10 +1,9 @@
 import pandas as pd
-from config import CLEANED_DATASET_FILENAME, REPORT_FILENAME
-
+from config import CLEANED_DATASET_FILEPATH, REPORT_FILEPATH
+import json
 
 class ReportGenerator:
     def __init__(self):
-        self.cleaned_df = pd.read_csv(CLEANED_DATASET_FILENAME)
         self.results = []
 
     def __generate_revenue_by_category(self):
@@ -17,7 +16,7 @@ class ReportGenerator:
                 .sum()
                 .reset_index()
             )
-            result_dict = category_result.to_dict(orient="records", index=False)
+            result_dict = category_result.to_dict(orient="records")
             self.results.append(result_dict)
 
             return True
@@ -37,10 +36,10 @@ class ReportGenerator:
                 by="total_item_value", ascending=False
             )
             user_result = user_result.merge(
-                self.cleaned_df[["user_id", "name"]], on="user_id", how="left"
+                self.cleaned_df[["user_id", "name"]].drop_duplicates("user_id"), on="user_id", how="left"
             )
-            user_result = user_result.head(3)
-            user_dict = user_result.to_dict(orient="records", index=False)
+
+            user_dict = user_result.head(3).to_dict(orient="records")
 
             self.results.append(user_dict)
 
@@ -78,7 +77,7 @@ class ReportGenerator:
             )
             return_rate_result = return_rate_result[["country", "return_rate"]]
 
-            return_rate_dict = return_rate_result.to_dict(orient="records", index=False)
+            return_rate_dict = return_rate_result.to_dict(orient="records")
             self.results.append(return_rate_dict)
 
             return True
@@ -87,6 +86,8 @@ class ReportGenerator:
             return False
 
     def generate_report(self):
+        self.cleaned_df = pd.read_csv(CLEANED_DATASET_FILEPATH)
+
         if not self.__generate_revenue_by_category():
             return False
 
@@ -96,6 +97,7 @@ class ReportGenerator:
         if not self.__generate_return_rate():
             return False
 
-        self.results.to_json(REPORT_FILENAME, index=False)
+        with open(REPORT_FILEPATH, "w") as f:
+                json.dump(self.results, f, indent=4)
 
         return True

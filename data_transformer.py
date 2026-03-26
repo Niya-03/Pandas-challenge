@@ -1,36 +1,47 @@
 import pandas as pd
 import os
+import json
 from config import (
-    USERS_FILENAME,
-    PRODUCTS_FILENAME,
-    TRANSACTIONS_FILENAME,
-    CLEANED_DATASET_FILENAME,
+    USERS_FILEPATH,
+    PRODUCTS_FILEPATH,
+    TRANSACTIONS_FILEPATH,
+    CLEANED_DATASET_FILEPATH,
+    INVALID_TIMESTAMP_LOG_FILEPATH,
 )
 
 
 class DataTransformer:
-    def __init__():
+    def __init__(self):
         pass
 
     def __create_dataframes(self):
-        if not os.path.exists(USERS_FILENAME):
-            return False
+        try:
+            if not os.path.exists(USERS_FILEPATH):
+                return False
 
-        if not os.path.exists(PRODUCTS_FILENAME):
-            return False
+            if not os.path.exists(PRODUCTS_FILEPATH):
+                return False
 
-        if not os.path.exists(TRANSACTIONS_FILENAME):
-            return False
+            if not os.path.exists(TRANSACTIONS_FILEPATH):
+                return False
 
-        self.users_df = pd.read_json(USERS_FILENAME)
-        self.products_df = pd.read_json(PRODUCTS_FILENAME)
-        self.transactions_df = pd.read_json(TRANSACTIONS_FILENAME)
+            self.users_df = pd.read_json(USERS_FILEPATH)
+            self.products_df = pd.read_json(PRODUCTS_FILEPATH)
+            self.transactions_df = pd.read_json(TRANSACTIONS_FILEPATH)
+
+            return True
+        except Exception as e:
+            print(f"Error creating dataframes: {e}")
+            return False
 
     def __clean_products_df(self):
         self.products_df = self.products_df.dropna()
 
-    def __log(data_to_log, log_filename):
-        data_to_log.to_json(log_filename, index=False)
+    def __log(self, data_to_log):
+        log_dict = data_to_log.to_dict(orient="records")
+
+        with open(INVALID_TIMESTAMP_LOG_FILEPATH, "w") as f:
+            json.dump(log_dict, f, indent=4)
 
     def __clean_transactions_df(self):
         try:
@@ -43,7 +54,6 @@ class DataTransformer:
             ]
             self.__log(
                 invalid_timestamps_transactions_df,
-                "invalid_timestamp_transactions.json",
             )
 
             transactions_df_clean = self.transactions_df[timestamp_validity.notna()]
@@ -118,9 +128,6 @@ class DataTransformer:
         if not self.__create_dataframes():
             return False
 
-        if not self.__clean_products_df():
-            return False
-
         if not self.__clean_transactions_df():
             return False
 
@@ -130,6 +137,6 @@ class DataTransformer:
         if not self.__merge_result_df():
             return False
 
-        self.result.to_csv(CLEANED_DATASET_FILENAME, index=False)
+        self.result.to_csv(CLEANED_DATASET_FILEPATH, index=False)
 
         return True
