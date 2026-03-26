@@ -1,0 +1,547 @@
+[
+    {
+        "transaction_id": "0",
+        "user_id": 4,
+        "timestamp": "2025-10-1812:36:14",
+        "items": [
+            {
+                "product_id": 9,
+                "quantity": 2
+            },
+            {
+                "product_id": 18,
+                "quantity": 13
+            },
+            {
+                "product_id": 11,
+                "quantity": 12
+            },
+            {
+                "product_id": 13,
+                "quantity": 4
+            }
+        ],
+        "status": "CANCELLED"
+    },
+    {
+        "transaction_id": "1",
+        "user_id": 3,
+        "timestamp": "2024-08-07T12:44:37",
+        "items": [
+            {
+                "product_id": 0,
+                "quantity": 15
+            },
+            {
+                "product_id": 19,
+                "quantity": 14
+            }
+        ],
+        "status": "RETURNED"
+    },
+    {
+        "transaction_id": "2",
+        "user_id": 4,
+        "timestamp": "2024-10-18T00:44:54",
+        "items": [
+            {
+                "product_id": 4,
+                "quantity": 13
+            },
+            {
+                "product_id": 14,
+                "quantity": 14
+            },
+            {
+                "product_id": 8,
+                "quantity": 11
+            }
+        ],
+        "status": "RETURNED"
+    },
+    {
+        "transaction_id": "3",
+        "user_id": 13,
+        "timestamp": "2024-04-21T17:40:03",
+        "items": [
+            {
+                "product_id": 13,
+                "quantity": 10
+            },
+            {
+                "product_id": 15,
+                "quantity": 10
+            }
+        ],
+        "status": "COMPLETED"
+    },
+    {
+        "transaction_id": "4",
+        "user_id": 11,
+        "timestamp": "2023-06-17T14:53:42",
+        "items": [
+            {
+                "product_id": 18,
+                "quantity": 8
+            },
+            {
+                "product_id": 6,
+                "quantity": 5
+            },
+            {
+                "product_id": 4,
+                "quantity": 15
+            },
+            {
+                "product_id": 1,
+                "quantity": 5
+            },
+            {
+                "product_id": 19,
+                "quantity": 4
+            }
+        ],
+        "status": "CANCELLED"
+    },
+    {
+        "transaction_id": "5",
+        "user_id": 16,
+        "timestamp": "2023-10-08T15:39:26",
+        "items": [
+            {
+                "product_id": 5,
+                "quantity": 7
+            },
+            {
+                "product_id": 12,
+                "quantity": 8
+            },
+            {
+                "product_id": 7,
+                "quantity": 1
+            },
+            {
+                "product_id": 12,
+                "quantity": 15
+            }
+        ],
+        "status": "RETURNED"
+    },
+    {
+        "transaction_id": "6",
+        "user_id": 16,
+        "timestamp": "2025-10-17T20:05:10",
+        "items": [
+            {
+                "product_id": 10,
+                "quantity": 15
+            },
+            {
+                "product_id": 8,
+                "quantity": 5
+            },
+            {
+                "product_id": 17,
+                "quantity": 8
+            },
+            {
+                "product_id": 7,
+                "quantity": 15
+            }
+        ],
+        "status": "RETURNED"
+    },
+    {
+        "transaction_id": "7",
+        "user_id": 9,
+        "timestamp": "2024-09-13T00:29:41",
+        "items": [
+            {
+                "product_id": 16,
+                "quantity": 5
+            },
+            {
+                "product_id": 9,
+                "quantity": 4
+            },
+            {
+                "product_id": 17,
+                "quantity": 5
+            },
+            {
+                "product_id": 14,
+                "quantity": 6
+            }
+        ],
+        "status": "COMPLETED"
+    },
+    {
+        "transaction_id": "8",
+        "user_id": 9,
+        "timestamp": "2023-02-26T13:47:24",
+        "items": [],
+        "status": "RETURNED"
+    },
+    {
+        "transaction_id": "9",
+        "user_id": 2,
+        "timestamp": "2025-07-31T03:34:37",
+        "items": [
+            {
+                "product_id": 18,
+                "quantity": 5
+            },
+            {
+                "product_id": 4,
+                "quantity": 4
+            },
+            {
+                "product_id": 13,
+                "quantity": 14
+            },
+            {
+                "product_id": 2,
+                "quantity": 5
+            }
+        ],
+        "status": "RETURNED"
+    },
+    {
+        "transaction_id": "10",
+        "user_id": 15,
+        "timestamp": "2024-02-3004:24:03",
+        "items": [
+            {
+                "product_id": 19,
+                "quantity": 3
+            },
+            {
+                "product_id": 12,
+                "quantity": 13
+            },
+            {
+                "product_id": 13,
+                "quantity": 7
+            }
+        ],
+        "status": "CANCELLED"
+    },
+    {
+        "transaction_id": "11",
+        "user_id": 0,
+        "timestamp": "2024-02-16T02:53:02",
+        "items": [],
+        "status": "COMPLETED"
+    },
+    {
+        "transaction_id": "12",
+        "user_id": 19,
+        "timestamp": "2024-05-15T22:12:38",
+        "items": [
+            {
+                "product_id": 10,
+                "quantity": 12
+            },
+            {
+                "product_id": 2,
+                "quantity": 6
+            }
+        ],
+        "status": "RETURNED"
+    },
+    {
+        "transaction_id": "13",
+        "user_id": 8,
+        "timestamp": "2025-09-13T11:40:01",
+        "items": [],
+        "status": "COMPLETED"
+    },
+    {
+        "transaction_id": "14",
+        "user_id": 17,
+        "timestamp": "2025-03-12T04:22:10",
+        "items": [],
+        "status": "RETURNED"
+    },
+    {
+        "transaction_id": "15",
+        "user_id": 14,
+        "timestamp": "2023-01-15T23:13:56",
+        "items": [
+            {
+                "product_id": 12,
+                "quantity": 12
+            },
+            {
+                "product_id": 13,
+                "quantity": 14
+            },
+            {
+                "product_id": 6,
+                "quantity": 14
+            },
+            {
+                "product_id": 7,
+                "quantity": 10
+            }
+        ],
+        "status": "COMPLETED"
+    },
+    {
+        "transaction_id": "16",
+        "user_id": 19,
+        "timestamp": "2023-01-01T22:53:59",
+        "items": [
+            {
+                "product_id": 10,
+                "quantity": 4
+            },
+            {
+                "product_id": 19,
+                "quantity": 3
+            },
+            {
+                "product_id": 3,
+                "quantity": 8
+            },
+            {
+                "product_id": 17,
+                "quantity": 15
+            },
+            {
+                "product_id": 19,
+                "quantity": 12
+            }
+        ],
+        "status": "RETURNED"
+    },
+    {
+        "transaction_id": "17",
+        "user_id": 18,
+        "timestamp": "2023-01-18T04:06:41",
+        "items": [
+            {
+                "product_id": 14,
+                "quantity": 7
+            },
+            {
+                "product_id": 17,
+                "quantity": 6
+            },
+            {
+                "product_id": 1,
+                "quantity": 5
+            },
+            {
+                "product_id": 1,
+                "quantity": 12
+            }
+        ],
+        "status": "RETURNED"
+    },
+    {
+        "transaction_id": "18",
+        "user_id": 19,
+        "timestamp": "2025-07-25T03:53:26",
+        "items": [
+            {
+                "product_id": 18,
+                "quantity": 9
+            },
+            {
+                "product_id": 12,
+                "quantity": 14
+            },
+            {
+                "product_id": 3,
+                "quantity": 14
+            },
+            {
+                "product_id": 3,
+                "quantity": 11
+            },
+            {
+                "product_id": 4,
+                "quantity": 5
+            }
+        ],
+        "status": "CANCELLED"
+    },
+    {
+        "transaction_id": "19",
+        "user_id": 5,
+        "timestamp": "2023-07-29T14:29:59",
+        "items": [
+            {
+                "product_id": 9,
+                "quantity": 4
+            },
+            {
+                "product_id": 0,
+                "quantity": 1
+            },
+            {
+                "product_id": 7,
+                "quantity": 10
+            }
+        ],
+        "status": "COMPLETED"
+    },
+    {
+        "transaction_id": "20",
+        "user_id": 7,
+        "timestamp": "2025-03-2111:13:13",
+        "items": [
+            {
+                "product_id": 6,
+                "quantity": 5
+            }
+        ],
+        "status": "COMPLETED"
+    },
+    {
+        "transaction_id": "21",
+        "user_id": 0,
+        "timestamp": "2024-09-03T13:35:10",
+        "items": [],
+        "status": "CANCELLED"
+    },
+    {
+        "transaction_id": "22",
+        "user_id": 3,
+        "timestamp": "2025-09-10T04:46:30",
+        "items": [
+            {
+                "product_id": 13,
+                "quantity": 10
+            }
+        ],
+        "status": "COMPLETED"
+    },
+    {
+        "transaction_id": "23",
+        "user_id": 10,
+        "timestamp": "2024-10-29T23:47:41",
+        "items": [
+            {
+                "product_id": 4,
+                "quantity": 15
+            },
+            {
+                "product_id": 9,
+                "quantity": 9
+            },
+            {
+                "product_id": 0,
+                "quantity": 10
+            },
+            {
+                "product_id": 16,
+                "quantity": 8
+            }
+        ],
+        "status": "COMPLETED"
+    },
+    {
+        "transaction_id": "24",
+        "user_id": 12,
+        "timestamp": "2025-09-29T16:40:44",
+        "items": [
+            {
+                "product_id": 1,
+                "quantity": 9
+            },
+            {
+                "product_id": 10,
+                "quantity": 14
+            },
+            {
+                "product_id": 7,
+                "quantity": 4
+            },
+            {
+                "product_id": 7,
+                "quantity": 9
+            }
+        ],
+        "status": "RETURNED"
+    },
+    {
+        "transaction_id": "25",
+        "user_id": 15,
+        "timestamp": "2025-10-29T23:57:15",
+        "items": [
+            {
+                "product_id": 5,
+                "quantity": 8
+            },
+            {
+                "product_id": 6,
+                "quantity": 4
+            },
+            {
+                "product_id": 10,
+                "quantity": 5
+            }
+        ],
+        "status": "CANCELLED"
+    },
+    {
+        "transaction_id": "26",
+        "user_id": 1,
+        "timestamp": "2023-03-20T02:12:44",
+        "items": [],
+        "status": "COMPLETED"
+    },
+    {
+        "transaction_id": "27",
+        "user_id": 3,
+        "timestamp": "2023-04-08T12:33:10",
+        "items": [
+            {
+                "product_id": 15,
+                "quantity": 3
+            },
+            {
+                "product_id": 5,
+                "quantity": 5
+            },
+            {
+                "product_id": 15,
+                "quantity": 5
+            },
+            {
+                "product_id": 19,
+                "quantity": 4
+            }
+        ],
+        "status": "COMPLETED"
+    },
+    {
+        "transaction_id": "28",
+        "user_id": 10,
+        "timestamp": "2025-07-10T00:19:57",
+        "items": [],
+        "status": "RETURNED"
+    },
+    {
+        "transaction_id": "29",
+        "user_id": 6,
+        "timestamp": "2024-09-12T00:47:40",
+        "items": [
+            {
+                "product_id": 4,
+                "quantity": 14
+            },
+            {
+                "product_id": 15,
+                "quantity": 5
+            },
+            {
+                "product_id": 14,
+                "quantity": 5
+            }
+        ],
+        "status": "COMPLETED"
+    }
+]

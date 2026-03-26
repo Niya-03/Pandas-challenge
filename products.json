@@ -1,0 +1,102 @@
+[
+    {
+        "product_id": "0",
+        "category": "Laptops",
+        "price": null
+    },
+    {
+        "product_id": "1",
+        "category": "Printers",
+        "price": 1899.99
+    },
+    {
+        "product_id": "2",
+        "category": "Cameras",
+        "price": 990.1
+    },
+    {
+        "product_id": "3",
+        "category": "Smartphones",
+        "price": null
+    },
+    {
+        "product_id": "4",
+        "category": "Tablets",
+        "price": 1899.99
+    },
+    {
+        "product_id": "5",
+        "category": "Laptops",
+        "price": 990.1
+    },
+    {
+        "product_id": "6",
+        "category": "Tablets",
+        "price": 674
+    },
+    {
+        "product_id": "7",
+        "category": "Cameras",
+        "price": 679.98
+    },
+    {
+        "product_id": "8",
+        "category": "Cameras",
+        "price": null
+    },
+    {
+        "product_id": "9",
+        "category": "Smartphones",
+        "price": 674
+    },
+    {
+        "product_id": "10",
+        "category": "Printers",
+        "price": 990.1
+    },
+    {
+        "product_id": "11",
+        "category": "Printers",
+        "price": null
+    },
+    {
+        "product_id": "12",
+        "category": "Printers",
+        "price": 679.98
+    },
+    {
+        "product_id": "13",
+        "category": "Smartphones",
+        "price": 1899.99
+    },
+    {
+        "product_id": "14",
+        "category": "Laptops",
+        "price": 679.98
+    },
+    {
+        "product_id": "15",
+        "category": "Smartphones",
+        "price": 500.55
+    },
+    {
+        "product_id": "16",
+        "category": "Laptops",
+        "price": 500.55
+    },
+    {
+        "product_id": "17",
+        "category": "Cameras",
+        "price": null
+    },
+    {
+        "product_id": "18",
+        "category": "Printers",
+        "price": null
+    },
+    {
+        "product_id": "19",
+        "category": "Laptops",
+        "price": null
+    }
+]
